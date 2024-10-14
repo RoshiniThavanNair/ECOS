@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCS - Basic Info</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>eCOS</h1>
+    </header>
+
+    <!-- Navigation with numbers -->
+    <section class="navigation-section">
+        <nav class="page-navigation">
+            <ul>
+                <li><a href="pcs-login.html" class="nav-link"><span class="circle">1</span><br>Basic Info</a></li>
+                <li class="separator">----------------</li>
+                <li><a href="electricity.html" class="nav-link"><span class="circle">2</span><br>Building Parameters & Consumption</a></li>
+                <li class="separator">----------------</li>
+                <li><a href="ess.html" class="nav-link"><span class="circle">3</span><br>ESS Settings</a></li>
+                <li class="separator">----------------</li>
+                <li><a href="economic.html" class="nav-link"><span class="circle">4</span><br>Economic Settings</a></li>
+                <li class="separator">----------------</li>
+                <li><a href="report.html" class="nav-link"><span class="circle">5</span><br>Report</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <!-- Separator line between navigation and content -->
+    <hr class="separator-line">
+
+    <!-- Page Content -->
+    <main class="page-content" id="page-content">
+        <section id="basic-info" class="active">
+            <div class="form-container transparent-box">
+                <h2 class="basic-info-title">Basic Info</h2> <!-- Title Added Here -->
+                
+                <br><br> <!-- Increased space between title and first label -->
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="project-name"><span class="required-asterisk">*</span>Project Name</label>
+                        <br><br> <!-- Increased space here -->
+                        <input type="text" id="project-name" name="project-name" class="input-box" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-name"><span class="required-asterisk">*</span>Customer Name</label>
+                        <br><br> <!-- Increased space here -->
+                        <input type="text" id="customer-name" name="customer-name" class="input-box" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="address"><span class="required-asterisk">*</span>Address</label>
+                        <br><br> <!-- Increased space here -->
+                        <input type="text" id="address" name="address" class="input-box" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="start-year"><span class="required-asterisk">*</span>Project Lifecycle</label>
+                        <div class="year-range">
+                            <!-- Start Year Date Picker -->
+                            <input type="date" id="start-year" class="input-box" placeholder="Start Year">
+                            <span class="arrow">-</span>
+                            <!-- End Year Date Picker -->
+                            <input type="date" id="end-year" class="input-box" placeholder="End Year">
+                        </div>
+                        <p id="year-message" class="light-grey">Maximum 25 years</p>
+                        <p id="years-selected" class="light-grey"></p>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="solar-inverter"><span class="required-asterisk">*</span>Maximum Solar Inverter Size (kW)</label>
+                        <br><br> <!-- Increased space here -->
+                        <input type="number" id="solar-inverter" name="solar-inverter" class="input-box" required>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <button class="cancel-button" onclick=cancel()>Cancel</button>
+        <button class="next-button" id="next-button">Next</button>
+    </footer>
+
+    <!-- Link to external JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

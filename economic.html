@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCS - Economic Settings</title>
+    <link rel="stylesheet" href="style1.css"> <!-- Link to CSS file -->
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>eCOS</h1>
+    </header>
+
+    <!-- Navigation with numbers -->
+    <section class="navigation-section">
+        <nav class="page-navigation">
+            <ul>
+                <li><a href="pcs-login.html" class="nav-link"><span class="circle">1</span><br>Basic Info</a></li>
+                <li class="separator">----------------</li>
+                <li><a href="electricity.html" class="nav-link"><span class="circle">2</span><br>Building Parameters & Consumption</a></li>
+                <li class="separator">----------------</li>
+                <li><a href="ess.html" class="nav-link"><span class="circle">3</span><br>ESS Settings</a></li>
+                <li class="separator">----------------</li>
+                <li><a href="economic.html" class="nav-link"><span class="circle">4</span><br>Economic Settings</a></li>
+                <li class="separator">----------------</li>
+                <li><a href="report.html" class="nav-link"><span class="circle">5</span><br>Report</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <!-- Separator line between navigation and content -->
+    <hr class="separator-line">
+
+    <!-- Page Content -->
+    <main class="page-content" id="page-content">
+        <section id="economic-settings" class="active">
+            <div class="form-container transparent-box">
+                <h2 class="cost-setting-title">Cost Settings</h2> <!-- Title Added Here -->
+                
+                
+                <!-- Current Settings Display -->
+                <div class="current-settings">
+                    <label for="currency-unit">Currency Unit: MYR; Discount Rate(%):</label>
+                    <input type="number1" id="currency-unit" value="3.7" required>
+                </div>
+
+                <br> <!-- Increased space before the next section -->
+                <h3 class="initial-installation-title">Initial Installation Cost</h3> <!-- Title Added Here -->
+
+                <!-- ESS Capacity Planning Mode -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="pv-system-price"><span class="required-asterisk">*</span>PV System Price</label>
+                        <br><br> <!-- Increased space here -->
+                        <div class="input-group">
+                            <input type="number" id="pv-system-price" name="pv-system-price" class="input-box1" required>
+                            <select id="pv-price-unit" name="pv-price-unit" class="input-box1" required>
+                                <option value="" disabled selected>Select Unit</option>
+                                <option value="myr-w">MYR/W</option>
+                                <option value="myr-kw">MYR/kW</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ess-price"><span class="required-asterisk">*</span>ESS Price</label>
+                        <br><br> <!-- Increased space here -->
+                        <div class="input-group">
+                            <input type="number" id="ess-price" name="ess-price" class="input-box1" required>
+                            <select id="ess-price-unit" name="ess-price-unit" class="input-box1" required>
+                                <option value="" disabled selected>Select Unit</option>
+                                <option value="myr-wh">MYR/Wh</option>
+                                <option value="myr-kwh">MYR/kWh</option>
+                            </select>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <h3 class="O & M-Cost">O&M Cost</h3>
+
+                <!-- ESS Capacity Planning Mode -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="pv-o&m-price"><span class="required-asterisk">*</span>PV O&M Price</label>
+                        <br><br> <!-- Increased space here -->
+                        <div class="input-group">
+                            <input type="number" id="pv-o&m-price" name="pv-o&m-price" class="input-box1" required>
+                            <select id="pv-o&m-price-unit" name="pv-o&m-price-unit" class="input-box1" required>
+                                <option value="" disabled selected>Select Unit</option>
+                                <option value="myr-w">MYR/W/Year</option>
+                                <option value="myr-kw">MYR/kW/Year</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ess-price"><span class="required-asterisk">*</span>ESS O&M Price</label>
+                        <br><br> <!-- Increased space here -->
+                        <div class="input-group">
+                            <input type="number" id="ess-O&M-price" name="ess-O&M-price" class="input-box1" required>
+                            <select id="ess-o&m-price-unit" name="ess-o&m-price-unit" class="input-box1" required>
+                                <option value="" disabled selected>Select Unit</option>
+                                <option value="myr-w">MYR/Wh/Year</option>
+                                <option value="myr-kw">MYR/kWh/Year</option>
+                            </select>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <button class="previous-button" id="previous-button">Previous</button>
+        <button class="next-button" id="next-button">Next</button>
+    </footer>
+
+    <!-- Link to external JavaScript -->
+    <script src="script.js"></script> <!-- Link to JS file -->
+</body>
+</html>

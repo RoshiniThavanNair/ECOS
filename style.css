@@ -1,0 +1,60 @@
+body {
+    background-image: url('C:/Users/tws_e/Desktop/electron-app/image/solar 2.jpg'); /* Your background image file */
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: black; /* Default text color */
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em; /* Increased font size */
+    margin-bottom: 20px;
+    color: #255595; /* eCOS color */
+}
+
+h2 {
+    font-size: 2em; /* Increased font size */
+    margin: 30px 0; /* Added more space between title and boxes */
+    color: #328AB3; /* Choose account type color */
+}
+
+.account-types {
+    display: flex;
+    justify-content: space-around;
+    width: 100%; /* Ensure full width for spacing */
+    margin-top: 30px; /* Add some spacing */
+}
+
+.account-box {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 30px;
+    width: 250px; /* Increased box width */
+    cursor: pointer;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column; /* Stack the image and text */
+    align-items: center; /* Center align contents */
+    margin: 0 20px; /* Add spacing between the boxes */
+}
+
+.account-box:hover {
+    transform: scale(1.05);
+}
+
+.account-box img {
+    width: 70px; /* Customize icon size */
+    height: 70px; /* Increased icon size */
+}
+
+.account-box span {
+    display: block;
+    margin-top: 15px;
+    font-size: 1.5em; /* Increased font size */
+    color: black; /* Text color for account type */
+}

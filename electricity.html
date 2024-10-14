@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCS - Electricity Price</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>eCOS</h1>
+    </header>
+
+    <!-- Navigation with numbers -->
+    <section class="navigation-section">
+        <nav class="page-navigation">
+            <ul>
+                <li><a href="pcs-login.html" class="nav-link"><span class="circle">1</span><br>Basic Info</a></li>
+                <li class="separator">----------------</li>
+                <li><a href="electricity.html" class="nav-link"><span class="circle">2</span><br>Building Parameters & Consumption</a></li>
+                <li class="separator">----------------</li>
+                <li><a href="ess.html" class="nav-link"><span class="circle">3</span><br>ESS Settings</a></li>
+                <li class="separator">----------------</li>
+                <li><a href="economic.html" class="nav-link"><span class="circle">4</span><br>Economic Settings</a></li>
+                <li class="separator">----------------</li>
+                <li><a href="report.html" class="nav-link"><span class="circle">5</span><br>Report</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <!-- Separator line between navigation and content -->
+    <hr class="separator-line">
+
+    <!-- Page Content -->
+    <main class="page-content" id="page-content">
+        <section id="electricity-price" class="active">
+            <div class="form-container transparent-box">
+                <h2 class="building-parameters-settings-title">Building Parameters Settings</h2> <!-- Title Added Here -->
+                
+                <br> <!-- Increased space between title and first label -->
+
+                <h3>Building Params</h3>
+            
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="original-tariff"><span class="required-asterisk">*</span>Original Tariff</label>
+                        <br><br> <!-- Increased space here -->
+                        <select id="original-tariff" name="original-tariff" class="input-box" required>
+                            <option value="" disabled selected>Select Original Tariff</option>
+                            <option value="c1 tou">C1 TOU</option>
+                            <option value="c2 tou">C2 TOU</option>
+                            <option value="d tou">D TOU</option>
+                            <option value="ds tou">Ds TOU</option>
+                            <option value="e1 tou">E1 TOU</option>
+                            <option value="e1s tou">E1s TOU</option>
+                            <option value="e2 tou">E2 TOU</option>
+                            <option value="e2s tou">E2s TOU</option>
+                            <option value="e3 tou">E3 TOU</option>
+                            <option value="e3s tou">E3s TOU</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nem-rate"><span class="required-asterisk">*</span>NEM Rate</label>
+                        <br><br> <!-- Increased space here -->
+                        <input type="number" id="nem-rate" name="nem-rate" class="input-box" step="0.001" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="eCOS-tariff"><span class="required-asterisk">*</span>eCOS Tariff</label>
+                        <br><br> <!-- Increased space here -->
+                        <select id="eCOS-tariff-mode" name="eCOS-tariff-mode" class="input-box" required>
+                            <option value="" disabled selected>Select eCOS Tariff</option>
+                            <option value="c1 etou">C1 ETOU</option>
+                            <option value="c2 etou">C2 ETOU</option>
+                            <option value="d etou">D ETOU</option>
+                            <option value="ds etou">Ds ETOU</option>
+                            <option value="e1 etou">E1 ETOU</option>
+                            <option value="e1s etou">E1s ETOU</option>
+                            <option value="e2 etou">E2 ETOU</option>
+                            <option value="e2s etou">E2s ETOU</option>
+                            <option value="e3 etou">E3 ETOU</option>
+                            <option value="e3s etou">E3s ETOU</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nem-rate"><span class="required-asterisk">*</span>KWTBB Rate</label>
+                        <br><br> <!-- Increased space here -->
+                        <input type="number" id="kwtbb-rate" name="kwtbb-rate" class="input-box" step="0.001" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="factory-region"><span class="required-asterisk">*</span>Factory Region</label>
+                        <br><br> <!-- Increased space here -->
+                        <select id="eCOS-tariff-mode" name="eCOS-tariff-mode" class="input-box" required>
+                            <option value="" disabled selected>Select eCOS Tariff</option>
+                            <option value="jhr">Johor(JHR)</option>
+                            <option value="kdh">Kedah(KDH)</option>
+                            <option value="ktn">Kelantan(KTN)</option>
+                            <option value="mlk">Malacca(MLK)</option>
+                            <option value="nsn">Negeri Sembilan(NSN)</option>
+                            <option value="phg">Pahang(PHG)</option>
+                            <option value="png">Penang(PNG)</option>
+                            <option value="prk">Perak(PRK)</option>
+                            <option value="pls">Perlis(PLS)</option>
+                            <option value="sbh">Sabah(SBH)</option>
+                            <option value="swk">Sarawak(SWK)</option>
+                            <option value="sgr">Selangor(SGR)</option>
+                            <option value="trg">Terengganu(TRG)</option>
+                            <option value="kul">Kuala Lumpur(KUL)</option>
+                            <option value="lbn">Labuan(LBN)</option>
+                            <option value="pjy">Putrajaya(PJY)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="icpt-rate"><span class="required-asterisk">*</span>ICPT Rate (Second Half Year)</label>
+                        <br><br> <!-- Increased space here -->
+                        <input type="number" id="icpt-rate" name="icpt-rate" class="input-box" step="0.01" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="icpt-rate"><span class="required-asterisk">*</span>ICPT Rate (First Half Year)</label>
+                        <br><br> <!-- Increased space here -->
+                        <input type="number" id="icpt-rate" name="icpt-rate" class="input-box" step="0.01" required>
+                    </div>
+                </div>
+
+                <br>
+
+                <h3>BESS  Params</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="battery-cost-kwh"><span class="required-asterisk">*</span>Battery Cost per kWh (RM)</label>
+                        <br><br> <!-- Increased space here -->
+                        <input type="number" id="battery-cost-kwh" name="battery-cost-kwh" class="input-box" step="0.01" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="battery-lifecycles"><span class="required-asterisk">*</span>Battery Life Cycles</label>
+                        <br><br> <!-- Increased space here -->
+                        <input type="number" id="battery-lifecycles" name="battery-lifecycles" class="input-box" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="battery-life"><span class="required-asterisk">*</span>Battery Life (years)</label>
+                        <br><br> <!-- Increased space here -->
+                        <input type="number" id="battery-life" name="battery-life" class="input-box"  required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="battery-rating"><span class="required-asterisk">*</span>Battery C Rating</label>
+                        <br><br> <!-- Increased space here -->
+                        <input type="number" id="battery-rating" name="battery-rating" class="input-box" step="0.1" required>
+                    </div>
+                </div>
+
+                <br>
+
+                <h3>PCS  Params</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="pcs-cost-kw"><span class="required-asterisk">*</span>PCS Cost per kW (RM)</label>
+                        <br><br> <!-- Increased space here -->
+                        <input type="number" id="pcs-cost-kw" name="pcs-cost-kw" class="input-box" step="0.01" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pcs-life"><span class="required-asterisk">*</span>PCS Life (years)</label>
+                        <br><br> <!-- Increased space here -->
+                        <input type="number" id="pcs-life" name="pcs-life" class="input-box" required>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Consumption Settings (Hidden by default) -->
+        <section id="consumption-settings" class="active">
+            <div class="form-container transparent-box">
+                <h2 class="consumption-settings-title">Consumption Settings</h2>
+                <br>
+                <h3>Upload Building Load, PV Generation, and Location Data</h3>
+                <div class="download-box">
+                    <a href="C:/Users/tws_e/Desktop/electron-app/Building_Load_Template.xlsx" download class="download-link">
+                        Download Building Load Template
+                    </a>
+                </div>
+                <br>
+
+                <div class="upload-section">
+                    <div class="upload-label"><span class="required-asterisk">*</span>Upload Building Load Data (1 Year)</div>
+                    <label for="file-upload" class="upload-box" id="upload-box">
+                        <img src="C:/Users/tws_e/Desktop/electron-app/image/upload.png" alt="Upload Icon" class="upload-icon">
+                        <div class="upload-text" id="upload-text">
+                            Drag and drop file here
+                            <div class="upload-subtext">Limit 200MB file • CSV, XLSX</div>
+                        </div>
+                        <input type="file" id="file-upload" class="file-input" onchange="showFileName()" />
+                    </label>
+                </div>            
+
+                <br>
+
+                <div class="download-box">
+                    <a href="C:/Users/tws_e/Desktop/electron-app/PV_Generation_Template.xlsx" download class="download-link">
+                        Download PV Generation Template
+                    </a>
+                </div>     
+
+                <br>
+
+                <div class="upload-section">
+                    <div class="upload-label"><span class="required-asterisk">*</span>Upload PV Generation Data (1 Year)</div>
+                    <label for="pv-file-upload" class="upload-box" id="pv-upload-box">
+                        <img src="C:/Users/tws_e/Desktop/electron-app/image/upload.png" alt="Upload Icon" class="upload-icon">
+                        <div class="upload-text" id="pv-upload-text">
+                            Drag and drop file here
+                            <div class="upload-subtext">Limit 200MB file • CSV, XLSX</div>
+                        </div>
+                        <input type="file" id="pv-file-upload" class="file-input" onchange="showPVFileName()" />
+                    </label>
+                </div> 
+
+                <br><br>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="latitude"><span class="required-asterisk">*</span>Latitude</label>
+                        <br><br> <!-- Increased space here -->
+                        <input type="number" id="latitude" name="latitude" class="input-box" step="0.01" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="longitude"><span class="required-asterisk">*</span>Longitude</label>
+                        <br><br> <!-- Increased space here -->
+                        <input type="number" id="longitude" name="longitude" class="input-box" step="0.01" required>
+                    </div>
+                </div>
+
+                <br>
+                <button id="save-files" onclick="saveFiles()">Save Files</button> <!-- Save Files Button -->
+                <br>
+                <br>
+                <br>
+
+                <h2>Data Visualization</h2>
+                <br>
+                <h4>eCos ETOU TimeZone</h4>
+
+                <!-- Transparent Box for Timezone -->
+                
+                <div class="etou-box">
+                    <!-- Color Boxes for Peak, Mid-Peak, Off-Peak -->
+                    <div class="color-boxes">
+                        <div class="color-box peak">Peak</div>
+                        <div class="color-box mid-peak">Mid-Peak</div>
+                        <div class="color-box off-peak">Off-Peak</div>
+                    </div>
+            
+                    <h4>Weekdays</h4>
+                    
+                    <div class="time-grid">
+                        <!-- Time Grid with Color Indications -->
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                    
+                        <div class="time-box mid-peak-hour"></div>
+                        <div class="time-box mid-peak-hour"></div>
+                        <div class="time-box mid-peak-hour"></div>
+                    
+                        <div class="time-box peak-hour"></div>
+                    
+                        <div class="time-box mid-peak-hour"></div>
+                        <div class="time-box mid-peak-hour"></div>
+                    
+                        <div class="time-box peak-hour"></div>
+                        <div class="time-box peak-hour"></div>
+                        <div class="time-box peak-hour"></div>
+                    
+                        <div class="time-box mid-peak-hour"></div>
+                        <div class="time-box mid-peak-hour"></div>
+                        <div class="time-box mid-peak-hour"></div>
+                        <div class="time-box mid-peak-hour"></div>
+                        <div class="time-box mid-peak-hour"></div>
+                    
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                    </div>
+                    
+                    <!-- Time Labels -->
+                    <div class="time-labels">
+                        <span>00:00</span>
+                        <span>01:00</span>
+                        <span>02:00</span>
+                        <span>03:00</span>
+                        <span>04:00</span>
+                        <span>05:00</span>
+                        <span>06:00</span>
+                        <span>07:00</span>
+                    
+                        <span>08:00</span>
+                        <span>09:00</span>
+                        <span>10:00</span>
+                    
+                        <span>11:00</span>
+                        <span>12:00</span>
+                    
+                        <span>13:00</span>
+                        <span>14:00</span>
+                    
+                        <span>15:00</span>
+                        <span>16:00</span>
+                        <span>17:00</span>
+                    
+                        <span>18:00</span>
+                        <span>19:00</span>
+                        <span>20:00</span>
+                        <span>21:00</span>
+                        <span>22:00</span>
+                    
+                        <span>23:00</span>
+                        <span>24:00</span>
+                    </div> 
+                    <br>
+
+                    <h4>Weekends & Public Holidays</h4>
+
+                    <div class="time-grid">
+                        <!-- Time Grid with Color Indications -->
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                        <div class="time-box off-peak-hour"></div>
+                    </div>
+                    
+                    <!-- Time Labels -->
+                    <div class="time-labels">
+                        <span>00:00</span>
+                        <span>01:00</span>
+                        <span>02:00</span>
+                        <span>03:00</span>
+                        <span>04:00</span>
+                        <span>05:00</span>
+                        <span>06:00</span>
+                        <span>07:00</span>
+                    
+                        <span>08:00</span>
+                        <span>09:00</span>
+                        <span>10:00</span>
+                    
+                        <span>11:00</span>
+                        <span>12:00</span>
+                    
+                        <span>13:00</span>
+                        <span>14:00</span>
+                    
+                        <span>15:00</span>
+                        <span>16:00</span>
+                        <span>17:00</span>
+                    
+                        <span>18:00</span>
+                        <span>19:00</span>
+                        <span>20:00</span>
+                        <span>21:00</span>
+                        <span>22:00</span>
+                    
+                        <span>23:00</span>
+                        <span>24:00</span>
+                    </div> 
+
+                </div>
+
+                <label for="date-selection">Select a date:</label>
+                <input type="date" id="date-selection" />
+                <button id="generate-plots" onclick="generatePlots()">Generate Plots</button> <!-- Generate Plots Button -->
+
+                <!-- Canvas for Chart.js -->
+                <canvas id="dataChart" width="400" height="200"></canvas>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <button class="previous-button" id="previous-button">Previous</button>
+        <button class="next-button" id="next-button">Next</button>
+    </footer>
+
+    <!-- Link to external JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

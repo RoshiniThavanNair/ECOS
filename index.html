@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eCOS Login Page</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="login-container">
+        <h1>eCOS</h1>
+        <h2>Choose account type</h2>
+        <div class="account-types">
+            <div class="account-box" id="pcs-user" onclick="redirectToNextPage('pcs')">
+                <img src="C:/Users/tws_e/Desktop/electron-app/image/login blue.png" alt="PCS User Icon">
+                <span>PCS User</span>
+            </div>
+            <div class="account-box" id="hybrid-user" onclick="redirectToNextPage('hybrid')">
+                <img src="C:/Users/tws_e/Desktop/electron-app/image/login red.png" alt="Hybrid User Icon">
+                <span>Hybrid User</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function redirectToNextPage(type) {
+            if (type === 'pcs') {
+                window.location.href = 'pcs-login.html'; // Redirect to PCS user login page
+            } else {
+                window.location.href = 'hybrid-login.html'; // Redirect to Hybrid user login page
+            }
+        }
+    </script>
+</body>
+</html>

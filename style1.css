@@ -1,0 +1,435 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Header styling */
+.header {
+    background-color: lightgrey;
+    color: black;
+    padding: 5px;
+    text-align: left;
+    position: fixed;
+    width: 100%;
+    top: 0; /* Ensure it stays at the top */
+    z-index: 1000; /* Stay above other content */
+}
+
+.header h1 {
+    font-size: 2em;
+}
+
+/* Navigation section with white background */
+.navigation-section {
+    background-color: white;
+    padding: 100px 0px 5px; /* Increased top padding to account for header height */
+    text-align: center;
+}
+
+/* Page navigation styling */
+.page-navigation{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+.page-navigation ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.page-navigation ul li {
+    margin: 0 5px;
+    text-align: center;
+}
+
+.page-navigation ul li a {
+    color: #808080;
+    text-decoration: none;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-navigation ul li a .circle {
+    background-color: #808080;
+    border-radius: 50%;
+    color: white;
+    padding: 4px 6px;
+    margin-bottom: 2px;
+    font-size: 0.8em;
+}
+
+.page-navigation ul li a:hover {
+    color: #00bfff;
+}
+
+.page-navigation ul li a:hover .circle {
+    background-color: #00bfff;
+}
+
+.separator-line {
+    border-top: 1px solid black;
+    margin: 0px 0;
+    width: 100%;
+}
+
+/* Page content styling */
+.page-content {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+}
+
+/* Transparent Box Styling */
+.transparent-box {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Form row for inline layout */
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    flex: 0 0 48%; /* Ensures equal spacing */
+}
+
+.input-box {
+    width: 70%; /* Reduced length of the fill-up boxes */
+    padding: 8px;
+    margin: 10px 0; /* Ensures equal spacing on top and bottom */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.year-range {
+    display: flex;
+    align-items: center;
+}
+
+.arrow {
+    margin: 0 10px;
+}
+
+#year-message {
+    color: grey;
+    font-size: 0.9em;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.footer {
+    padding: 10px;
+    background-color: lightgrey;
+    display: flex;
+    justify-content: flex-end;
+    position: fixed; /* Fixed position at the bottom */
+    width: 100%; /* Full width */
+    bottom: 0; /* Sticks to the bottom */
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+/* Footer text styling */
+.footer p {
+    margin: 0; /* Remove default margin */
+}
+
+.cancel-button, .next-button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.previous-button, .next-button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    max-width: 120px; /* Set a maximum width for the button */
+    overflow: hidden; /* Prevent overflow if content is too long */
+    white-space: nowrap; /* Prevent text from wrapping */
+    text-overflow: ellipsis; 
+}
+
+.cancel-button {
+    background-color: white;
+}
+
+.previous-button {
+    background-color: white;
+}
+
+.next-button {
+    background-color: blue;
+    color: white;
+    margin-right: 20px;
+}
+
+.cancel-button:hover {
+    background-color: lightgrey;
+}
+
+.previous-button:hover {
+    background-color: lightgrey;
+}
+
+.next-button:hover {
+    background-color: darkblue;
+}
+
+/* Active state (when a navigation item is selected) */
+.nav-link.active {
+    color: blue; /* Set text color to blue */
+}
+
+.nav-link.active .circle {
+    background-color: blue; /* Set circle background to blue */
+}
+
+.nav-link.active {
+    color: blue; /* Change text color to blue for the active link */
+}
+
+.nav-link {
+    transition: color 0.1s ease; /* Smooth transition for color change */
+}
+
+/* Additional styling for the navigation */
+.navigation-section {
+    margin-bottom: 10px; /* Adjust margin as needed */
+}
+
+.separator {
+    margin: 0 10px; /* Adjust separator spacing */
+}
+
+.current-settings {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 12px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+input[type="number1"] {
+    width: 60px; /* Adjust width specifically for number inputs */
+    font-size: 12px;
+}
+
+option[value="custom"] {
+    font-size: 12px;
+}
+
+option[value="default"] {
+    font-size: 12px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px; /* Adjust spacing between input and select */
+}
+
+.input-box1 {
+    width: 40%; /* Reduced length of the fill-up boxes */
+    padding: 8px;
+    margin: 10px 0; /* Ensures equal spacing on top and bottom */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.transparent-box {
+    background-color: rgba(255, 255, 255, 0.7); /* Make the box transparent */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Transparent box for ETOU Timezone */
+.etou-box {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7); /* Transparent background */
+}
+
+/* Timezone title styling */
+.etou-box h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+
+/* Time zone labels */
+.timezone-label {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Color boxes for Peak, Mid-Peak, Off-Peak */
+.color-boxes {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.color-box {
+    width: 100px;
+    height: 30px;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.peak { background-color: red; }
+.mid-peak { background-color: darkorange; }
+.off-peak { background-color: green; }
+
+/* Time grid */
+.time-grid {
+    display: grid;
+    grid-template-columns: repeat(25, 52px);
+    gap: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.time-box {
+    padding: 10px 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.peak-hour { background-color: red; color: white; }
+.mid-peak-hour { background-color: darkorange; color: white; }
+.off-peak-hour { background-color: green; color: white; }
+
+/* Time Labels */
+.time-labels {
+    display: grid;
+    grid-template-columns: repeat(25, 1fr);
+    gap: 5px;
+    text-align: left;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/* Transparent box with border styling */
+.download-box {
+    background-color: rgba(255, 255, 255, 0.7); /* Transparent white box */
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid #808080; /* Add grey border */
+    width: 250px; /* Adjust width as needed */
+    margin-top: 10px;
+    text-align: center; /* Center the text inside the box */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth background and border change on hover */
+}
+
+/* Link styling */
+.download-link {
+    color: #000; /* Default link color (black) */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+/* Hover effect for the whole box */
+.download-box:hover {
+    background-color: #007BFF; /* Blue background on hover */
+    border-color: #0056b3; /* Darker blue border on hover */
+}
+
+/* Link color change on hover */
+.download-box:hover .download-link {
+    color: white; /* Change text color to white on hover */
+}
+
+/* Container for the upload section */
+.upload-section {
+    margin-top: 20px;
+    text-align: left; /* Align content to the left */
+}
+
+/* Styling for the upload box */
+.upload-box {
+    display: flex;
+    align-items: center;
+    background-color: #d3d3d3; /* Light grey background */
+    border: 2px dashed #808080; /* Dashed border */
+    border-radius: 8px;
+    padding: 20px;
+    width: 85%; /* Full width of container */
+    
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Change background color on hover */
+.upload-box:hover {
+    background-color: #c0c0c0; /* Slightly darker grey on hover */
+}
+
+/* Icon styling */
+.upload-icon {
+    width: 40px; /* Adjust size of the upload icon */
+    margin-right: 15px;
+}
+
+/* Upload text styling */
+.upload-text {
+    font-size: 16px;
+    color: #000;
+}
+
+/* Subtext below the main text */
+.upload-subtext {
+    font-size: 12px;
+    color: #808080;
+    margin-top: 5px;
+}
+
+/* Hide the file input but keep it clickable */
+.file-input {
+    display: none;
+}
+
+.required-asterisk {
+    color: red; /* Make the asterisk red */
+}
+
